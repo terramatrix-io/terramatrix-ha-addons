@@ -1,6 +1,6 @@
 name: "TerraMatrix"
 description: "AI-powered dashboards and intelligent automation for Home Assistant"
-version: "0.1.0"
+version: "0.1.1"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"
@@ -8,6 +8,7 @@ arch:
   - amd64
   - aarch64
   - armv7
+init: false
 homeassistant: "2024.1.0"
 ingress: true
 ingress_port: 8099

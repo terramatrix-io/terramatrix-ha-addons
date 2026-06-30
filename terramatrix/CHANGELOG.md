@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Disable Docker init for the add-on container so s6-overlay can run as PID 1.
+
 ## 0.1.0
 
 - Initial release
