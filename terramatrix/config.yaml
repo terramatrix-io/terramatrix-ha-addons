@@ -1,0 +1,35 @@
+name: "TerraMatrix"
+description: "AI-powered dashboards and intelligent automation for Home Assistant"
+version: "0.1.0"
+slug: "terramatrix"
+url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
+image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+homeassistant: "2024.1.0"
+ingress: true
+ingress_port: 8099
+panel_icon: "mdi:view-dashboard"
+panel_title: "TerraMatrix"
+homeassistant_api: true
+auth_api: true
+hassio_api: true
+hassio_role: "default"
+options:
+  cloud_url: "https://app.terramatrix.io"
+  cloud_token: ""
+  log_level: "info"
+  standalone_mode: false
+schema:
+  cloud_url: "url"
+  cloud_token: "password?"
+  log_level: "list(trace|debug|info|warning|error)"
+  standalone_mode: "bool"
+ports:
+  "8099/tcp": null
+ports_description:
+  "8099/tcp": "Web interface (handled by ingress)"
+map:
+  - config:ro

@@ -1,0 +1,13 @@
+configuration:
+  cloud_url:
+    name: Cloud URL
+    description: TerraMatrix cloud server URL for AI and dashboard sync features.
+  cloud_token:
+    name: Cloud Token
+    description: Authentication token for connecting to TerraMatrix cloud. Get this from your TerraMatrix account settings.
+  log_level:
+    name: Log Level
+    description: Controls the verbosity of add-on logging.
+  standalone_mode:
+    name: Standalone Mode
+    description: Run without cloud connection. Only local and auto-generated dashboards will be available.
