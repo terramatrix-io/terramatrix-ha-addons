@@ -1,6 +1,6 @@
 name: "TerraMatrix"
 description: "AI-powered dashboards and intelligent automation for Home Assistant"
-version: "0.1.3"
+version: "0.1.4"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"
@@ -21,11 +21,13 @@ hassio_role: "default"
 options:
   cloud_url: "https://app.terramatrix.io"
   cloud_token: ""
+  cloud_socket_path: "/backend-api/socket.io"
   log_level: "info"
   standalone_mode: false
 schema:
   cloud_url: "url"
   cloud_token: "password?"
+  cloud_socket_path: "str"
   log_level: "list(trace|debug|info|warning|error)"
   standalone_mode: "bool"
 ports:

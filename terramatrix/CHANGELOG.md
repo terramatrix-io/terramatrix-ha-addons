@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Route cloud relay Socket.IO traffic through `/backend-api/socket.io` by default so the add-on matches TerraMatrix test/prod nginx routing.
+
 ## 0.1.3
 
 - Run the internal bridge service on port 3000 so nginx can own the Home Assistant ingress port 8099.
