@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Run the internal bridge service on port 3000 so nginx can own the Home Assistant ingress port 8099.
+
 ## 0.1.2
 
 - Remove the runtime dependency on `bashio` from add-on service scripts.
