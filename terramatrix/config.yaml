@@ -1,6 +1,6 @@
 name: "TerraMatrix"
 description: "AI-powered dashboards and intelligent automation for Home Assistant"
-version: "0.1.4"
+version: "0.1.5"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"

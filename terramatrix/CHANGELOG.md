@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- Automation delete now verifies the removal actually took effect and reports YAML-mode automations that the Home Assistant config API cannot delete, instead of silently reporting success when Home Assistant returns a 404.
+
 ## 0.1.4
 
 - Route cloud relay Socket.IO traffic through `/backend-api/socket.io` by default so the add-on matches TerraMatrix test/prod nginx routing.
