@@ -12,7 +12,7 @@ https://github.com/terramatrix-io/terramatrix-ha-addons
 
 ## Add-ons
 
-- `terramatrix`: TerraMatrix bridge and viewer for Home Assistant.
+- `terramatrix`: TerraMatrix edge runtime for Home Assistant.
 
 ## Images
 
@@ -26,4 +26,3 @@ Supported architectures:
 
 - `amd64`
 - `aarch64`
-- `armv7`

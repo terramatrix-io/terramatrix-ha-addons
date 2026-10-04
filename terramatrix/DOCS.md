@@ -1,43 +1,40 @@
 # TerraMatrix for Home Assistant
 
-AI-powered dashboards and intelligent automation for your Home Assistant instance.
+Runs the TerraMatrix edge runtime next to Home Assistant. It connects your Home
+Assistant to TerraMatrix so you can see and control your home, and edit
+automations, from TerraMatrix.
 
-## Quick Start
+## Setup
 
-1. Add this repository to your Home Assistant add-on store
-2. Install the TerraMatrix add-on
-3. Start the add-on — it will automatically discover your HA entities
-4. Open TerraMatrix from the sidebar to see your auto-generated dashboards
+1. In TerraMatrix, open **Settings → Integrations → Home Assistant** and click
+   **Register bridge** (or **New token** on an existing instance). Copy the
+   node ID and enrollment token it shows — the token is shown once.
+2. In this add-on's **Configuration** tab, set:
+   - `node_id` — the `TM_NODE_ID` value
+   - `enrollment_token` — the `TM_ENROLLMENT_TOKEN` value
+   - `cloud_url` — the TerraMatrix workflow service, for example `http://10.10.10.13:8001`
+3. Start the add-on. Within a few seconds the instance shows **Online** in TerraMatrix.
 
-## Features
-
-- **Auto-generated dashboards** based on your HA areas and devices
-- **Real-time entity state** with live updates
-- **Device control** for lights, climate, covers, locks, media players, and switches
-- **Entity history charts** for sensors and other numeric entities
-- **AI-powered automation** creation via natural language (requires TerraMatrix Cloud)
-- **Custom dashboards** designed in the TerraMatrix web editor
-- **Standalone mode** works without cloud connection
+The add-on talks to this Home Assistant directly; no Home Assistant token is needed.
 
 ## Configuration
 
 | Option | Description | Default |
 |--------|-------------|---------|
-| `cloud_url` | TerraMatrix cloud server URL | `https://app.terramatrix.io` |
-| `cloud_token` | Authentication token for cloud features | (empty) |
+| `node_id` | Node ID from TerraMatrix | (empty) |
+| `enrollment_token` | Enrollment token from TerraMatrix | (empty) |
+| `cloud_url` | TerraMatrix workflow service URL | (empty) |
+| `cloud_socket_path` | Socket.IO path on the cloud URL | `/socket.io` |
+| `ha_url` | Only when Home Assistant runs on another machine | (empty) |
+| `ha_token` | Long-lived token for `ha_url` | (empty) |
 | `log_level` | Logging verbosity | `info` |
-| `standalone_mode` | Run without cloud connection | `false` |
 
-## Cloud Connection (Optional)
+## Replacing a token
 
-To enable AI automation generation and cloud-designed dashboards:
-
-1. Create an account at [app.terramatrix.io](https://app.terramatrix.io)
-2. Register your HA instance in the TerraMatrix dashboard
-3. Copy the cloud token into the add-on configuration
-4. Restart the add-on
+Click **New token** in TerraMatrix, paste the new enrollment token here and
+restart the add-on. The old token stops working immediately. **Disconnect** in
+TerraMatrix revokes the token without deleting anything.
 
 ## Support
 
-- [Documentation](https://docs.terramatrix.io)
 - [GitHub Issues](https://github.com/terramatrix-io/terramatrix-ha-addons/issues)

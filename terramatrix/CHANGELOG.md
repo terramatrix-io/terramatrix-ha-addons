@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.0.0
+
+- Replaced the bridge with the TerraMatrix edge runtime. It connects to the
+  TerraMatrix workflow service over TNCP instead of the backend `/ha-bridge`
+  socket.
+- Configuration changed: set `node_id`, `enrollment_token` and `cloud_url`
+  (from TerraMatrix: Settings, Integrations, Home Assistant, New token). The
+  old `cloud_token` and `standalone_mode` options are gone; 1.x tokens do not
+  work with 2.0.0.
+- armv7 is no longer supported.
+
 ## 0.1.5
 
 - Automation delete now verifies the removal actually took effect and reports YAML-mode automations that the Home Assistant config API cannot delete, instead of silently reporting success when Home Assistant returns a 404.

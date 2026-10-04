@@ -1,13 +1,22 @@
 configuration:
+  node_id:
+    name: Node ID
+    description: The TM_NODE_ID shown by TerraMatrix (Settings, Integrations, Home Assistant, New token).
+  enrollment_token:
+    name: Enrollment Token
+    description: The TM_ENROLLMENT_TOKEN shown with the node ID. It is shown once; generate a new one if lost.
   cloud_url:
     name: Cloud URL
-    description: TerraMatrix cloud server URL for AI and dashboard sync features.
-  cloud_token:
-    name: Cloud Token
-    description: Authentication token for connecting to TerraMatrix cloud. Get this from your TerraMatrix account settings.
+    description: The TerraMatrix workflow service this node connects to, for example http://10.10.10.13:8001.
+  cloud_socket_path:
+    name: Cloud Socket Path
+    description: Socket.IO path on the cloud URL. Leave as /socket.io unless your TerraMatrix routes it elsewhere.
+  ha_url:
+    name: Home Assistant URL
+    description: Only when Home Assistant runs on a different machine. Leave empty for this Home Assistant.
+  ha_token:
+    name: Home Assistant Token
+    description: Long-lived access token for the Home Assistant URL above. Leave empty for this Home Assistant.
   log_level:
     name: Log Level
     description: Controls the verbosity of add-on logging.
-  standalone_mode:
-    name: Standalone Mode
-    description: Run without cloud connection. Only local and auto-generated dashboards will be available.

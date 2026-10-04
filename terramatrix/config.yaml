@@ -1,13 +1,13 @@
 name: "TerraMatrix"
-description: "AI-powered dashboards and intelligent automation for Home Assistant"
-version: "0.1.5"
+description: "TerraMatrix edge runtime: connects Home Assistant to TerraMatrix and keeps working when the internet does not"
+version: "2.0.0"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"
+# armv7 dropped in 2.0.0: Node 22 on 32-bit ARM is unreliable and caps near 3GB.
 arch:
   - amd64
   - aarch64
-  - armv7
 init: false
 homeassistant: "2024.1.0"
 ingress: true
@@ -19,17 +19,22 @@ auth_api: true
 hassio_api: true
 hassio_role: "default"
 options:
-  cloud_url: "https://app.terramatrix.io"
-  cloud_token: ""
-  cloud_socket_path: "/backend-api/socket.io"
+  node_id: ""
+  enrollment_token: ""
+  cloud_url: ""
+  cloud_socket_path: "/socket.io"
+  ha_url: ""
+  ha_token: ""
   log_level: "info"
-  standalone_mode: false
 schema:
-  cloud_url: "url"
-  cloud_token: "password?"
+  node_id: "str"
+  enrollment_token: "password?"
+  cloud_url: "str?"
   cloud_socket_path: "str"
+  # Only needed when Home Assistant runs on a DIFFERENT box than this add-on.
+  ha_url: "str?"
+  ha_token: "password?"
   log_level: "list(trace|debug|info|warning|error)"
-  standalone_mode: "bool"
 ports:
   "8099/tcp": null
 ports_description:
