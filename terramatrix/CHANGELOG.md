@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.1
+
+- TerraMatrix now shows the correct entity count. The add-on reported its
+  readiness before Home Assistant had finished loading, so the count read 0.
+
 ## 2.0.0
 
 - Replaced the bridge with the TerraMatrix edge runtime. It connects to the
