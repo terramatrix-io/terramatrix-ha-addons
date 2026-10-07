@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.2
+
+- `cloud_url` is now accepted as typed: `Https://…` and a trailing slash both
+  work. Before, a capital letter in the scheme or a trailing slash made every
+  connection attempt fail with a bare "websocket error".
+- An unusable `cloud_url` now stops the add-on with a message that names the
+  setting, instead of retrying forever.
+
 ## 2.0.1
 
 - TerraMatrix now shows the correct entity count. The add-on reported its

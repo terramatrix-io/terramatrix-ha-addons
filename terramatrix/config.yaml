@@ -1,6 +1,6 @@
 name: "TerraMatrix"
 description: "TerraMatrix edge runtime: connects Home Assistant to TerraMatrix and keeps working when the internet does not"
-version: "2.0.1"
+version: "2.0.2"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"

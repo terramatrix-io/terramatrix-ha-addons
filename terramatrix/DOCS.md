@@ -7,12 +7,13 @@ automations, from TerraMatrix.
 ## Setup
 
 1. In TerraMatrix, open **Settings → Integrations → Home Assistant** and click
-   **Register bridge** (or **New token** on an existing instance). Copy the
+   **Register bridge** (or **Reconnect** / **New token** on an existing instance). Copy the
    node ID and enrollment token it shows — the token is shown once.
 2. In this add-on's **Configuration** tab, set:
    - `node_id` — the `TM_NODE_ID` value
    - `enrollment_token` — the `TM_ENROLLMENT_TOKEN` value
-   - `cloud_url` — the TerraMatrix workflow service, for example `http://10.10.10.13:8001`
+   - `cloud_url` — your TerraMatrix site address, for example `https://example.com`
+     (the address you open TerraMatrix at). Leave `cloud_socket_path` as `/socket.io`.
 3. Start the add-on. Within a few seconds the instance shows **Online** in TerraMatrix.
 
 The add-on talks to this Home Assistant directly; no Home Assistant token is needed.
@@ -23,7 +24,7 @@ The add-on talks to this Home Assistant directly; no Home Assistant token is nee
 |--------|-------------|---------|
 | `node_id` | Node ID from TerraMatrix | (empty) |
 | `enrollment_token` | Enrollment token from TerraMatrix | (empty) |
-| `cloud_url` | TerraMatrix workflow service URL | (empty) |
+| `cloud_url` | Your TerraMatrix site address (`https://…`) | (empty) |
 | `cloud_socket_path` | Socket.IO path on the cloud URL | `/socket.io` |
 | `ha_url` | Only when Home Assistant runs on another machine | (empty) |
 | `ha_token` | Long-lived token for `ha_url` | (empty) |
