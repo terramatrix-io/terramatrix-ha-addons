@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.4
+
+- Finishes the 2.0.3 fix. The stores were not only uncompacted but full: up to
+  50,000 queued events and 500,000 history points, more than the add-on's
+  memory can load. The bounds are now 5,000 queued events and 50,000 history
+  points, and an oversized store is trimmed to its newest entries before it
+  loads. Dropped entries are counted, as before.
+
 ## 2.0.3
 
 - The add-on no longer restarts every 30 seconds on a busy Home Assistant. Its
