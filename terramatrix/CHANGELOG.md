@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.3
+
+- The add-on no longer restarts every 30 seconds on a busy Home Assistant. Its
+  local stores only shrink when they are compacted, and a store that had grown
+  too large made the add-on run out of memory while loading it — before the
+  first compaction could run. Large stores are now compacted before they load.
+
 ## 2.0.2
 
 - `cloud_url` is now accepted as typed: `Https://…` and a trailing slash both
