@@ -1,6 +1,6 @@
 name: "TerraMatrix"
 description: "TerraMatrix edge runtime: connects Home Assistant to TerraMatrix and keeps working when the internet does not"
-version: "2.0.4"
+version: "2.1.1"
 slug: "terramatrix"
 url: "https://github.com/terramatrix-io/terramatrix-ha-addons"
 image: "ghcr.io/terramatrix-io/terramatrix-ha-addon-{arch}"
@@ -9,6 +9,11 @@ arch:
   - amd64
   - aarch64
 init: false
+# Host network so wall-tablet kiosks can find this add-on by LAN broadcast
+# (Docker port mapping does not pass broadcasts). The runtime API binds to
+# loopback, nginx :8099 admits only the Supervisor's ingress proxy, and the
+# kiosk listener (8443/tcp, discovery 8444/udp) runs only when kiosk_enabled.
+host_network: true
 homeassistant: "2024.1.0"
 ingress: true
 ingress_port: 8099
@@ -26,6 +31,7 @@ options:
   ha_url: ""
   ha_token: ""
   log_level: "info"
+  kiosk_enabled: false
 schema:
   node_id: "str"
   enrollment_token: "password?"
@@ -35,9 +41,16 @@ schema:
   ha_url: "str?"
   ha_token: "password?"
   log_level: "list(trace|debug|info|warning|error)"
+  # Wall-tablet kiosks: a signed-request listener on 8443/tcp and LAN discovery on 8444/udp.
+  kiosk_enabled: "bool"
+# With host_network these are documentation: the listeners bind the host's ports directly.
 ports:
   "8099/tcp": null
+  "8443/tcp": 8443
+  "8444/udp": 8444
 ports_description:
   "8099/tcp": "Web interface (handled by ingress)"
+  "8443/tcp": "Kiosk tablets (only when kiosk_enabled)"
+  "8444/udp": "Kiosk tablet discovery (only when kiosk_enabled)"
 map:
   - config:ro

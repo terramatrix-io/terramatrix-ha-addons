@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.1.1
+
+- The add-on's own health check no longer goes through the panel, which
+  (since 2.1.0) admits only Home Assistant's ingress. Home Assistant no longer
+  shows the add-on as unhealthy.
+
+## 2.1.0
+
+- Wall-tablet kiosks (off unless `kiosk_enabled` is turned on). A paired
+  tablet shows the pages and buttons your organization granted it and keeps
+  working when the internet is down. It talks only to this add-on, on its own
+  port (8443), and tablets can find the add-on on your network (8444/udp).
+- The add-on now uses the host network, so tablets can find it by broadcast.
+- Run as a plain container on a host network (outside Home Assistant), set
+  `TM_PANEL_ALLOW` (for example `127.0.0.1`) so only those addresses can open
+  the local panel.
+  Its internal interface listens only inside the add-on, and the web panel is
+  reachable only through Home Assistant, as before.
+- Adds about 8–12 MB of memory at most when kiosks are on (pages are kept on
+  disk, not in memory); nothing when they are off.
+
 ## 2.0.4
 
 - Finishes the 2.0.3 fix. The stores were not only uncompacted but full: up to
