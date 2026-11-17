@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.2
+
+- Wall tablets can run Home and Away thermostat controls: the add-on
+  applies an Away range edit with both ends of the heat/cool range, checks the
+  thermostat supports presets and ranges, and keeps a device's own correction.
+- Thermostat mode pickers on a tablet are accepted.
+
 ## 2.1.1
 
 - The add-on's own health check no longer goes through the panel, which
