@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.1.3
+
+- Whole-house Home/Away on wall tablets: the dial's − and + move every
+  thermostat in the house together, including a heat/cool unit's range (both
+  ends in one change, each inside the thermostat's own limits).
+- The add-on now checks a thermostat is still in the mode a tablet's control
+  was made for before changing it, so a Home or Away press never switches a
+  thermostat between heat and cool, or puts a heat set-point into a cool one.
+- Tells TerraMatrix it understands these newer tablet controls; older add-ons
+  keep getting the controls they already support.
+- A tablet may make up to 60 changes a minute (was 20), so one whole-house
+  change reaches every thermostat; each device still changes at most once a second.
+- A device removed or disabled in Home Assistant now disappears from the
+  add-on straight away, instead of showing its last state.
+
 ## 2.1.2
 
 - Wall tablets can run Home and Away thermostat controls: the add-on
